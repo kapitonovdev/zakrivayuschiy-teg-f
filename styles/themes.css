@@ -1,6 +1,6 @@
 :root.theme-dark {
-  --font-weight-main-dark: 465;
-  --font-weight-title-dark: 785;
+  --font-weight-main: 465;
+  --font-weight-title: 785;
   --color-accent: #00CC14;
   --background-color: #000;
   --button-text-color: #00CC14;
@@ -11,8 +11,8 @@
 }
 
 :root.theme-light {
-  --font-weight-main-light: 400;
-  --font-weight-title-light: 700;
+  --font-weight-main: 400;
+  --font-weight-title: 700;
   --color-accent: #000;
   --background-color: #fff;
   --button-text-color: #fff;
@@ -24,8 +24,8 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --font-weight-main-light: 400;
-    --font-weight-title-light: 700;
+    --font-weight-main: 400;
+    --font-weight-title: 700;
     --color-accent: #000;
     --background-color: #fff;
     --button-text-color: #fff;

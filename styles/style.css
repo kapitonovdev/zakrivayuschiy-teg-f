@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   color: var(--color-accent, #00CC14);
-  font-family: var(--font-main, Inter);
+  font-family: var(--font-main, Inter, Helvetica, Tahoma, sans-serif);
   font-size: var(--font-size-main, 1.125rem);
   background-color: var(--background-color, #000);
   background-image: var(--background-image);
@@ -26,8 +26,8 @@
   margin-block: 100px;
   border: 2px solid currentColor;
   padding-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
-  font-family: var(--font-accent, Press Start 2P);
-  font-weight: var(--font-weight-main-dark, 465);
+  font-family: var(--font-accent, 'PressStart2P', Copperplate, fantasy);
+  font-weight: var(--font-weight-main, 465);
   font-size: var(--font-size-main, 18px);
   background-color: var(--background-color, #000);
 }
@@ -46,7 +46,7 @@
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   margin-block-end: 25px;
   padding-inline-start: 20px;
 }
@@ -54,6 +54,7 @@
 .theme-menu__button {
   position: relative;
   border: none;
+  padding: 0;
   outline: none;
   font-size: var(--font-size-interaction, 14px);
   text-transform: uppercase;
@@ -82,7 +83,7 @@
   position: absolute;
   opacity: 0.6;
   animation: move infinite alternate 0.5s ease-in-out;
-  inset-inline-start: -20%;
+  inset-inline-start: -20px;
 }
 
 .theme-menu__button:after {
@@ -106,7 +107,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: clamp(3.125rem, 3.081rem + 0.1878vw, 3.25rem);
+  gap: clamp(3.15625rem, 3.1232rem + 0.1408vw, 3.25rem);
 }
 
 .card {
@@ -119,10 +120,10 @@
   padding: 5px 10px 4px;
   font-size: inherit;
   line-height: 1.2;
-  font-variation-settings: 'wght' var(--font-weight-title-dark, 785);
+  font-variation-settings: 'wght' var(--font-weight-title, 785);
 }
 
-.card__figure {
+.card__img-wrapper {
   position: relative;
   border-block-end: 2px solid currentColor;
 }
@@ -165,17 +166,17 @@
 
 .card__caption {
   position: absolute;
-  font-family: var(--font-accent, 'PressStart2P', 'Courier New', Consolas, monospace);
+  opacity: 0.5;
+  font-family: var(--font-accent, 'PressStart2P', Copperplate, fantasy);
   font-weight: 400;
   font-size: var(--font-size-interaction, 14px);
-  inset-inline-end: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
-  inset-block-start: 25px;
-  opacity: 0.5;
   text-shadow:
     -1px 0 var(--stroke-color, #000),
     1px 0 var(--stroke-color, #000),
     0 1px var(--stroke-color, #000),
     0 -1px var(--stroke-color, #000);
+  inset-inline-end: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
+  inset-block-start: 24px;
   mix-blend-mode: hard-light;
 }
 
@@ -191,18 +192,19 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 23.6px 25px;
+  padding: 24px 25px;
 }
 
 .card__text {
-  line-height: 1.18;
+  line-height: 1.178;
   inline-size: clamp(19.8125rem, 12.5722rem + 30.892vw, 40.375rem);
 }
 
 .card__actions {
   display: flex;
   justify-content: end;
-  gap: 6px;
+  gap: 4px;
+  block-size: 39.5px;
 }
 
 .button {
@@ -216,6 +218,7 @@
 .button::after {
   content: '';
   position: absolute;
+  inset: 0;
   display: block;
   background-color: var(--color-accent, currentColor);
   transition: transform var(--time-long, 0.5s) ease-in-out;
@@ -241,26 +244,23 @@
 .button__text {
   z-index: 1;
   color: var(--button-text-color, #00CC14);
-  font-family: var(--font-accent, 'PressStart2P', 'Courier New', Consolas, monospace);
+  font-family: var(--font-accent, 'PressStart2P', Copperplate, fantasy);
   font-size: var(--font-size-interaction, 14px);
   line-height: 0.9;
   mix-blend-mode: difference;
 }
 
 .card__icon-button {
-  display: flex;
-  transition: border var(--time-animation, 0.3s) ease;
   all: unset;
   border: 2px solid transparent;
+  transition: border var(--time-animation, 0.3s) ease;
+  cursor: pointer;
 }
 
 .card__icon-button:focus-visible {
+  display: flex;
   border: 2px solid var(--color-accent, #00CC14);
   transition: border var(--time-animation, 0.3s) ease;
-}
-
-.like-icon {
-  cursor: pointer;
 }
 
 .like-icon .like-icon__core,
@@ -337,7 +337,8 @@
 }
 
 .save {
-  padding-block: 50px 100px;
+  margin: auto;
+  padding-block-end: 100px;
 }
 
 .save__button {
@@ -395,7 +396,7 @@ dialog::backdrop {
 .save__dialog-text {
   z-index: 1;
   color: var(--button-text-color, #00CC14);
-  font-family: var(--font-accent, 'Courier New', Consolas, monospace, sans-serif);
+  font-family: var(--font-accent, 'PressStart2P', Copperplate, fantasy);
   font-size: 14px;
   line-height: 1.5;
   text-transform: uppercase;

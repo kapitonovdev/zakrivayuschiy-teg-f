@@ -1,13 +1,11 @@
 :root {
   /* Шрифты */
-  --font-main: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
-  --font-accent: 'PressStart2P', 'Courier New', Consolas, monospace;
-
+  --font-main: Inter, Helvetica, Tahoma, sans-serif;
+  --font-accent: 'PressStart2P', Copperplate, fantasy;
+  
   /* Толщина шрифта */
-  --font-weight-main-light: 400;
-  --font-weight-main-dark: 465;
-  --font-weight-title-light: 700;
-  --font-weight-title-dark: 785;
+  --font-weight-main: 465;
+  --font-weight-title: 785;
 
   /* Размеры шрифтов */
   --font-size-logo: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
