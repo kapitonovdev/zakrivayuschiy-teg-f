@@ -1,1 +1,33 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /* Шрифты */
+  --font-main: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
+  --font-accent: 'PressStart2P', 'Courier New', Consolas, monospace;
+
+  /* Толщина шрифта */
+  --font-weight-main-light: 400;
+  --font-weight-main-dark: 465;
+  --font-weight-title-light: 700;
+  --font-weight-title-dark: 785;
+
+  /* Размеры шрифтов */
+  --font-size-logo: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --font-size-header-title: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --font-size-main: 18px;
+  --font-size-interaction: 14px;
+
+  /* Цветовые переменные */
+  --color-accent: #00CC14;
+  --background-color: #000;
+  --color-heart-fill: #FF0000;
+  --button-text-color: #00CC14;
+  --stroke-color: #000;
+
+  /* Фон и градиент */
+  --background-image: repeating-linear-gradient(to right, #000 0, #000 2px, transparent 2px, transparent 4px),
+  repeating-linear-gradient(to bottom, #000 0, #000 2px, transparent 2px, transparent 4px),
+  linear-gradient(to bottom, #007f0c 0.01%, #004306);
+
+  /* Анимация */
+  --time-animation: 0.3s;
+  --time-long: 0.5s;
+}

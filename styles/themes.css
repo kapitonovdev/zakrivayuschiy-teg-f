@@ -1,6 +1,37 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
+:root.theme-dark {
+  --font-weight-main-dark: 465;
+  --font-weight-title-dark: 785;
+  --color-accent: #00CC14;
+  --background-color: #000;
+  --button-text-color: #00CC14;
+  --stroke-color: #000;
+  --background-image: repeating-linear-gradient(to right, #000 0, #000 2px, transparent 2px, transparent 4px),
+  repeating-linear-gradient(to bottom, #000 0, #000 2px, transparent 2px, transparent 4px),
+  linear-gradient(to bottom, #007f0c 0.01%, #004306);
+}
+
+:root.theme-light {
+  --font-weight-main-light: 400;
+  --font-weight-title-light: 700;
+  --color-accent: #000;
+  --background-color: #fff;
+  --button-text-color: #fff;
+  --stroke-color: #fff;
+  --background-image: repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+  repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+  linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --font-weight-main-light: 400;
+    --font-weight-title-light: 700;
+    --color-accent: #000;
+    --background-color: #fff;
+    --button-text-color: #fff;
+    --stroke-color: #fff;
+    --background-image: repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  }
+}
